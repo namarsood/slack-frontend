@@ -1,0 +1,15 @@
+.add-workplace-btn{
+    margin-top: 10px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    font-size: 30px;
+    background: none;
+    color: rgb(172, 173, 174);
+  }
+  
+  .add-workplace-btn:hover{
+    cursor: pointer;
+    border-radius: 8px;
+    background: rgb(43, 42, 48);
+  }

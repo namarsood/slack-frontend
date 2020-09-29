@@ -1,18 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import AddWorkplace from './components/AddWorkplace'
 import './App.css';
 
 function App() {
+  let [workplaces, modifyWorkplaces] = useState(()=>[
+    {
+      name: "w1"
+    },{
+      name: "w2"
+    }
+  ]);
+  
   return (
     <div class="main">
         <div class="workplaces">
-            <div class="workplace">
-                w1
-            </div>
-            <div class="workplace">
-                w2
-            </div>
+            {
+              workplaces.map(x=>{
+               return <div className="workplace">
+                  {x.name}
+                </div>
+              })
+            }
+            <AddWorkplace currentWorkplacesCount={workplaces.length} addWorkplace={modifyWorkplaces} />
         </div>
+
         <div class="sub-workplace">
             sub-workplace
         </div>
