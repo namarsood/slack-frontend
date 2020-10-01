@@ -1,3 +1,7 @@
+.add-workplace{
+    position: relative;
+}
+
 .add-workplace-btn{
     margin-top: 10px;
     width: 40px;
@@ -12,4 +16,16 @@
     cursor: pointer;
     border-radius: 8px;
     background: rgb(43, 42, 48);
+  }
+
+  .workplace-options{
+      height: 100px;
+      width: 270px;
+      position: absolute;
+      background: rgb(34, 37, 41);
+      border: 2px solid rgb(43, 42, 47);
+      border-radius: 10px;
+      color: white;
+      left: 50px;
+      top: 10px;
   }
