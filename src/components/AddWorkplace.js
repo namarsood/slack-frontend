@@ -15,30 +15,31 @@ function AddWorkplace(props) {
         changeWorkplaceOptionsVisibility((prevState)=> prevState==="none"?"block":"none");
     }
 
-    const wrapperRef = useRef(null);
-    useOutsideAlerter(wrapperRef, diplayWorkplaceOptions, showWorkplaceOptionsDialog);
+    const btnRef = useRef(null);
+
+    const optionsRef = useRef(null);
+    useOutsideAlerter(optionsRef, btnRef, diplayWorkplaceOptions, showWorkplaceOptionsDialog);
 
   return (
     <div className="add-workplace">
-        <button className="add-workplace-btn" onClick={showWorkplaceOptionsDialog}> 
+        <button className="add-workplace-btn" onClick={showWorkplaceOptionsDialog} ref={btnRef}> 
             +
         </button>
-        <div className="workplace-options" style={{display: diplayWorkplaceOptions}} ref={wrapperRef}>
+        <div className="add-workplace-options" style={{display: diplayWorkplaceOptions}} ref={optionsRef}>
             workplace dialog
         </div>
     </div>
   );
 }
 
-function useOutsideAlerter(ref, diplayWorkplaceOptions, showWorkplaceOptionsDialog) {
+function useOutsideAlerter(optionsRef, btnRef, diplayWorkplaceOptions, showWorkplaceOptionsDialog) {
     useEffect(() => {
         /**
          * Alert if clicked on outside of element
          */
         function handleClickOutside(event) {
             console.log("here", diplayWorkplaceOptions);
-            if (ref.current && !ref.current.contains(event.target) && diplayWorkplaceOptions === "block") {
-            
+            if (optionsRef.current && !optionsRef.current.contains(event.target) && !btnRef.current.contains(event.target) && diplayWorkplaceOptions === "block") {
                 showWorkplaceOptionsDialog();
             }
         }
@@ -49,7 +50,7 @@ function useOutsideAlerter(ref, diplayWorkplaceOptions, showWorkplaceOptionsDial
             // Unbind the event listener on clean up
             document.removeEventListener("mousedown", handleClickOutside);
         };
-    }, [ref, diplayWorkplaceOptions, showWorkplaceOptionsDialog]);
+    }, [optionsRef, btnRef, diplayWorkplaceOptions, showWorkplaceOptionsDialog]);
 }
 
 export default AddWorkplace;

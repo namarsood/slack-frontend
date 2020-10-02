@@ -34,11 +34,74 @@ body{
 }
 
 .sub-workplace{
+  flex-direction: column;
+  display: flex;
   color: white;
   flex: 2;
   border-top: 1px solid rgb(43, 42, 47);
   border-right: 1px solid rgb(43, 42, 47);
   background: rgb(25, 23, 29);
+}
+
+.workplace-header-container{
+  height: 50px;
+  display: flex;
+  flex: none;
+  border: 1px solid rgb(43, 42, 47);
+  color: white;
+  background: rgb(25, 23, 29);
+}
+
+.workplace-header-container:hover{
+  background: rgb(43, 42, 48);
+  cursor: pointer;
+}
+
+.workplace-header-body{
+  padding-left: 20px;
+}
+
+.workplace-options{
+  /* display: flex; */
+  /* flex-direction: column; */
+  margin-top: 10px;
+}
+
+.workplace-options-item{
+  padding: 5px 0 5px 20px ;
+  font-size:  15px;
+  cursor: pointer;
+}
+
+.workplace-options-item:hover{
+  background: rgb(43, 42, 48);
+}
+
+.workplace-body{
+  margin-top: 10px;
+}
+
+.channels-container{
+  padding-left: 20px;
+}
+
+.channel-heading{
+  /* height: 30px; */
+  padding: 1px;
+  background: rgb(43, 42, 48);;
+  cursor: pointer;
+}
+
+.channel-heading:hover{
+  cursor: pointer;
+}
+
+.channel-items-container{
+  
+}
+
+.channel-items{
+  
 }
 
 .message-window{
