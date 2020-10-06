@@ -23,32 +23,7 @@ function App() {
     "testing",
     "tribe",
     "webapp",
-    "weeklyupdate",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
+    "weeklyupdate"
   ];
 
   let directMessages = [
@@ -61,32 +36,18 @@ function App() {
     "Puri",
     "Gurneet",
     "Viresh",
-    "Madaan",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
-    "test",
+    "Madaan"
+  ];
+
+  let messages = [
+    1,
+    2,
+    3,
+    4,
+    5,
+    3,
+    4,
+    5
   ];
 
   let [
@@ -168,7 +129,27 @@ function App() {
           </div>
         </div>
       </div>
-      <div class="message-window">message-window</div>
+
+      <div class="message-window">
+      <div class="message-window-header">
+        <p>announcements</p>
+      </div>
+
+      <div class="message-window-body">
+        {
+          messages.map(x=>{
+          return <div key={x} className="message-box">{x}</div>
+          })
+        }
+      </div>
+
+      <div class="message-window-input-container">
+        <div class="message-window-input">
+        a
+        </div>
+      </div>
+
+      </div>
     </div>
   );
 }
